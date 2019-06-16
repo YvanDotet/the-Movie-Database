@@ -1,0 +1,29 @@
+<nav>
+    <ul>    
+        <li (click)="fClick('first')"> < </li>
+
+        <li (click)="fClick(-50)">-50</li>
+        <li (click)="fClick(-10)">-10</li>
+        <li (click)="fClick(-1)">-1</li>
+
+        <li (click)="fClick(1)">+1</li>
+        <li (click)="fClick(10)">+10</li>
+        <li (click)="fClick(50)">+50</li>
+
+        <li (click)="fClick('last')"> > </li>
+    </ul>
+</nav>
+
+<p style="color:red" *ngIf="error">
+  {{messageErreur}}
+</p>
+
+<div *ngIf="show">
+  <p><i>Page : {{numPage}}/{{pageTotal}}</i></p>
+
+  <ul class="films">
+    <li *ngFor="let result of list">
+      <app-vignette [reception]="result"></app-vignette>
+    </li>
+  </ul>
+</div>

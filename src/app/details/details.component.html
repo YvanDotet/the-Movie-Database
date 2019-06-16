@@ -1,0 +1,105 @@
+<p style="color:red" *ngIf="error">
+    {{messageErreur}}
+</p>
+
+<table *ngIf="show">
+  <thead>
+    <tr>
+      <td style="color:red">Clé</td>
+      <td style="color:blue">Valeur</td>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td>Titre</td>
+      
+      <td>
+        <h2>{{params.titre}}  ( id: {{params.id}} )</h2>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Poster</td>
+      <td>
+          <img src={{params.poster}} width="200px">
+      </td>
+    </tr>
+
+    <tr>
+      <td>Année</td>
+      <td><h3>{{params.annee}}</h3></td>
+    </tr>
+
+    <tr>
+      <td>Overview</td>
+      <td>{{params.synopsis}}</td>
+    </tr>
+    
+    <tr>
+      <td>Note</td>
+      <td>{{params.note}}/10</td>
+    </tr>
+
+    <tr>
+      <td>Fanart</td>
+      <td>
+        <img src="{{params.fanart}}" width="200px">
+      </td>
+    </tr>
+    
+    <tr>
+      <td>Liste d'acteurs</td>
+      <td>
+        <!--prendre dropdown de Bootstrap-->
+        <p style="color:red" *ngIf="errorLoadActors">
+          {{messageErreurLoadActors}}
+        </p>
+
+        <div *ngIf="showActors">
+          <select #selection (change)="fChange(selection)">
+            <option value="Introduction">
+              Acteur(trices) du film
+            </option>
+
+            <option *ngFor="let acteur of actors;let i = index" value={{i}}>
+              [{{i+1}}] {{acteur.acteur}}
+            </option>
+          </select>
+          
+          <div *ngIf="infoActeur">
+            {{infoActeur.acteur}} a joué {{infoActeur.personnage}}
+            <img src="{{infoActeur.image}}" width="100px">
+          </div>
+        </div>
+
+      </td>
+    </tr>
+      
+    <tr>
+      <td>Similaires</td>
+      <td>
+
+        <p style="color:red" *ngIf="errorSimilars">
+          {{messageErreurSimilars}}
+        </p>
+
+        <div *ngIf="showSimilars">
+          <ul style="list-style: none">
+            <li *ngFor="let same of similars" style="display:inline-block;border: 3px paleturquoise solid;text-align: center;">
+              <a routerLink="/details/{{same.id}}" style="text-decoration:none" target="_blank">
+                <!-- j'ouvre une autre page -->
+                <i>{{same.titre}}</i>
+                <br>
+                <img src="{{same.image}}" style="width: 100px">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>

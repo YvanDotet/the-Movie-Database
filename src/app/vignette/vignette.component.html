@@ -1,0 +1,49 @@
+<div *ngIf="result">
+    <a routerLink="/details/{{result.id}}">
+        <table>
+            <thead>
+                <tr>
+                    <td style="background-color:red"></td>
+                    <td style="background-color:blue"></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Titre</td>
+                    <td>
+                        <h2>{{result.titre}}</h2>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <i><h6>Id</h6></i>
+                    </td>
+                    <td>
+                        <i><h6>{{result.id}}</h6></i>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Poster</td>
+                    <td>
+                        <img src="{{result.poster}}" width="200px">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Année</td>
+                    <td>
+                        <h3>{{result.annee}}</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Note</td>
+                    <td>{{result.note}}/10</td>
+                </tr>
+            </tbody>
+        </table>
+    </a>
+</div>

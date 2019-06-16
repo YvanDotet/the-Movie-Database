@@ -1,0 +1,36 @@
+<label for="recherche">
+    <h3>Ecrivez le titre, l'id ou toutes autres références ayant lien avec le film recherché.</h3>
+</label>
+<input type="search" id="recherche" #recherche
+(input)="fSearch(recherche.value)">
+
+<nav>
+    <ul>    
+        <li (click)="fClick('first')"> < </li>
+
+        <li (click)="fClick(-50)">-50</li>
+        <li (click)="fClick(-10)">-10</li>
+        <li (click)="fClick(-1)">-1</li>
+
+        <li (click)="fClick(1)">+1</li>
+        <li (click)="fClick(10)">+10</li>
+        <li (click)="fClick(50)">+50</li>
+
+        <li (click)="fClick('last')"> > </li>
+    </ul>
+</nav>
+
+<p style="color:red" *ngIf="error">
+    {{messageErreur}}
+</p>
+
+<div *ngIf="show">
+    <p *ngIf="0<resultTotal"><i>Page : {{numPage}}/{{pageTotal}}</i></p>
+    <span *ngIf="resultTotal===0" style="color: red">0 résultat</span>
+
+    <ul class="films">
+        <li *ngFor="let result of list">
+            <app-vignette [reception]="result"></app-vignette>
+        </li>
+    </ul>
+</div>
