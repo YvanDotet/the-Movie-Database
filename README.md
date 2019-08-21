@@ -1,4 +1,4 @@
-![apercu](https://github.com/YvanDotet/the-Movie-Database/blob/master/src/assets/apercu.jpg)
+![apercu](https://github.com/YvanDotet/the-Movie-Database/blob/master/src/assets/apercu.png)
 
 # TheMovieDB
 
