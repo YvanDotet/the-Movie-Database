@@ -1,3 +1,5 @@
+![apercu](https://github.com/YvanDotet/the-Movie-Database/blob/master/src/assets/apercu.jpg)
+
 # TheMovieDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
